@@ -37,14 +37,14 @@ export function solve(lines: string[]) {
  * ]); // 4
  * ```
  */
-export function solve2(lines: string[]) {
+export function solvePart2(lines: string[]) {
   return lines.map(parseReport).reduce((safeReports, report) => {
     if (isReportSafe(report)) {
       return safeReports + 1;
     }
 
     const hasSafeSubset = report.some((_, index) =>
-      isReportSafe(report.filter((_, i) => i !== index)),
+      isReportSafe(report.filter((_, i) => i !== index))
     );
 
     return hasSafeSubset ? safeReports + 1 : safeReports;
@@ -65,10 +65,10 @@ export function solve2(lines: string[]) {
  */
 function isReportSafe(report: number[]) {
   const increasing = report.every(
-    (element, index) => index === 0 || element > report[index - 1],
+    (element, index) => index === 0 || element > report[index - 1]
   );
   const decreasing = report.every(
-    (element, index) => index === 0 || element < report[index - 1],
+    (element, index) => index === 0 || element < report[index - 1]
   );
   const smallChanges = report.every((element, index) => {
     const abs = Math.abs(element - report[index - 1]);

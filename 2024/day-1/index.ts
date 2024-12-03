@@ -20,7 +20,7 @@ export function solve(lines: string[]) {
   const [left, right] = createLeftAndRightArrays(lines);
   return left.reduce(
     (distance, value, index) => distance + Math.abs(value - right[index]),
-    0,
+    0
   );
 }
 
@@ -39,11 +39,11 @@ export function solve(lines: string[]) {
  * ]); // 8
  * ```
  */
-export function solve2(lines: string[]) {
+export function solvePart2(lines: string[]) {
   const [left, right] = createLeftAndRightArrays(lines);
   const rightMap = right.reduce(
     (map, value) => map.set(value, (map.get(value) || 0) + 1),
-    new Map<number, number>(),
+    new Map<number, number>()
   );
   return left.reduce((total, element) => {
     return total + element * (rightMap.get(element) || 0);
