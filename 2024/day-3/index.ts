@@ -1,11 +1,11 @@
 /** @see https://adventofcode.com/2024/day/3 */
 
 /**
- * The exercice is to detect any multiplication in the pattern and sum the multiplications
- * The pattern we are looking for is `mul(a,b)` where a and b are numbers of 3 digits max
+ * Detects all valid multiplication patterns in the input and calculates the sum of their results.
+ * The pattern to search for is `mul(a,b)`, where `a` and `b` are numbers with up to three digits.
  *
- * @param input a string containing multiplication instructions
- * @returns the sum of all multiplications
+ * @param input A string containing various instructions, including multiplication patterns.
+ * @returns The sum of all valid multiplications found in the input.
  * @example
  * ```ts
  * solve(`xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))`)
@@ -25,12 +25,13 @@ export function solve(input: string) {
 }
 
 /**
- * The exercice is to detect any multiplication in the pattern and sum the multiplications
- * The pattern we are looking for is `mul(a,b)` where a and b are numbers of 3 digits max
- * The pattern will also contain `do()` and `don't()` instructions. When we meet a don't() instruction we disable multiplication, when we meet a do() instruction we enable multiplication
+ * Detects valid multiplication patterns and calculates their sum, while accounting for enable/disable instructions.
+ * The pattern `mul(a,b)` is only considered when multiplications are enabled.
+ * - The pattern `do()` enables multiplication.
+ * - The pattern `don't()` disables multiplication.
  *
- * @param input a string containing multiplication instructions
- * @returns the sum of all multiplications
+ * @param input A string containing various instructions, including multiplications and enable/disable commands.
+ * @returns The sum of all valid multiplications performed when multiplication is enabled.
  * @example
  * ```ts
  * solve2(`xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))`)
@@ -41,7 +42,7 @@ export function solve2(input: string) {
   let total = 0;
   let enabled = true;
   const matches = input.matchAll(
-    /(mul\((\d{1,3}),(\d{1,3})\))|(do\(\))|(don't\(\))/gm
+    /(mul\((\d{1,3}),(\d{1,3})\))|(do\(\))|(don't\(\))/gm,
   );
 
   for (const match of matches) {

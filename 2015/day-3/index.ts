@@ -1,13 +1,11 @@
 /** @see https://adventofcode.com/2015/day/3 */
 
 /**
- * This exercice is to count the number of unique positions Santa would visit.
- * ^ goes up and v goes down.
- * > goes right and < goes left.
- * We need to count the number of houses he would leave a gift
+ * Calculates the number of unique positions Santa visits based on movement instructions.
+ * ^ moves up, v moves down, > moves right, < moves left.
  *
  * @param input the input string of <>^v
- * @returns the number of unique positions Santa would visit
+ * @returns The number of unique positions visited.
  * @example
  * ```ts
  * solve(">"); // 2
@@ -20,17 +18,11 @@ export function solve(input: string) {
 }
 
 /**
- * This exercice is to count the number of unique positions Santa would visit.
- * This time he has a robot that can go up, down, left and right.
- * They both start at the same position.
- * Santa goes first and uses all odds instructions.
- * The robot goes second and uses all even instructions.
- * ^ goes up and v goes down.
- * > goes right and < goes left.
- * We need to count the number of houses he would leave a gift
- *
+ * Calculates the number of unique positions visited by Santa and Robo-Santa.
+ * Santa follows odd-indexed instructions, Robo-Santa follows even-indexed ones.
+ * ^ moves up, v moves down, > moves right, < moves left.
  * @param input the input string of <>^v
- * @returns the number of unique positions Santa and its robot would visit
+ * @returns The number of unique positions visited.
  * @example
  * ```ts
  * solvePart2("^v"); // 3
@@ -46,10 +38,10 @@ export function solvePart2(input: string) {
 }
 
 /**
- * Counts all the unique positions visited by instructions <>^v
+ * Computes all unique positions visited based on movement instructions.
  *
- * @param input the input string of <>^v
- * @returns the unique positions visited as a set of x,y coordinates
+ * @param input A string containing movement instructions (<>^v).
+ * @returns A set of unique positions visited in "x,y" format.
  * @example
  * ```ts
  * visit(">"); // { "0,0", "1,0" }

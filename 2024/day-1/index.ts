@@ -1,10 +1,11 @@
 /** @see https://adventofcode.com/2024/day/1 */
 
 /**
- * The exercice is to find the distance between the two arrays
- * For that, we need to compare the nth smallest number of the left array with the nth smallest number of the right array
- * and add the absolute difference between them
- * @returns the distance between the two arrays
+ * Calculates the "distance" between two arrays by summing the absolute differences
+ * between the nth smallest number of the left array and the nth smallest number of the right array.
+ *
+ * @param lines An array of strings where each line contains two space-separated numbers.
+ * @returns The total distance between the two arrays.
  * @example
  * ```ts
  * solve([
@@ -20,14 +21,16 @@ export function solve(lines: string[]) {
   const [left, right] = createLeftAndRightArrays(lines);
   return left.reduce(
     (distance, value, index) => distance + Math.abs(value - right[index]),
-    0
+    0,
   );
 }
 
 /**
- * The exercice is, for each element of the left array, to find the number of times it appears in the right array
- * and add the element value multiplied by this number to the total value
- * @returns the total value
+ * Calculates the total value by summing the product of each element in the left array
+ * and the number of times it appears in the right array.
+ *
+ * @param lines An array of strings where each line contains two space-separated numbers.
+ * @returns The total calculated value.
  * @example
  * ```ts
  * solve2([
@@ -43,7 +46,7 @@ export function solvePart2(lines: string[]) {
   const [left, right] = createLeftAndRightArrays(lines);
   const rightMap = right.reduce(
     (map, value) => map.set(value, (map.get(value) || 0) + 1),
-    new Map<number, number>()
+    new Map<number, number>(),
   );
   return left.reduce((total, element) => {
     return total + element * (rightMap.get(element) || 0);

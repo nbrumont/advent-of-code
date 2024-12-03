@@ -2,6 +2,7 @@
 
 /**
  * Given a list of reports, determines the number of safe reports
+ *
  * @param lines the lines of reports
  * @returns the number of safe reports
  * @example
@@ -23,6 +24,7 @@ export function solve(lines: string[]) {
 /**
  * Given a list of reports, determines the number of safe reports
  * This time, a report is safe if it has a safe subset when removing at most one element
+ *
  * @param lines the lines of reports
  * @returns the number of safe reports
  * @example
@@ -44,7 +46,7 @@ export function solvePart2(lines: string[]) {
     }
 
     const hasSafeSubset = report.some((_, index) =>
-      isReportSafe(report.filter((_, i) => i !== index))
+      isReportSafe(report.filter((_, i) => i !== index)),
     );
 
     return hasSafeSubset ? safeReports + 1 : safeReports;
@@ -55,6 +57,7 @@ export function solvePart2(lines: string[]) {
  * Check if a report is safe
  * A report is safe if the numbers are only either increasing or decreasing
  * and if the difference beetween two number is < 4 (1, 2 or 3)
+ *
  * @param report an array of numbers
  * @returns true if the report is safe, false otherwise
  * @example
@@ -65,10 +68,10 @@ export function solvePart2(lines: string[]) {
  */
 function isReportSafe(report: number[]) {
   const increasing = report.every(
-    (element, index) => index === 0 || element > report[index - 1]
+    (element, index) => index === 0 || element > report[index - 1],
   );
   const decreasing = report.every(
-    (element, index) => index === 0 || element < report[index - 1]
+    (element, index) => index === 0 || element < report[index - 1],
   );
   const smallChanges = report.every((element, index) => {
     const abs = Math.abs(element - report[index - 1]);

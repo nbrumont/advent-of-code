@@ -1,9 +1,9 @@
 /** @see https://adventofcode.com/2015/day/1 */
 
 /**
- * This exercice is to count the floor Santa would end up in.
- * He starts at 0 and ( means he goes up and ) means he goes down.
- * The input is a string of ( and ) characters
+ * Determines the floor Santa ends up on after following the given instructions.
+ * - `(` increases the floor by 1.
+ * - `)` decreases the floor by 1.
  *
  * @param input the string of ( and ) characters
  * @returns the floor he would end up in
@@ -19,13 +19,14 @@ export function solve(input: string) {
 }
 
 /**
- * This exercice is to return the position of the character that would make Santa enters the basement (-1).
- * He starts at 0 and ( means he goes up and ) means he goes down.
- * The input is a string of ( and ) characters
- * The first position is 1 and the second is 2 etc
+ * Finds the position of the first character that causes Santa to enter the basement (floor -1).
+ * - `(` increases the floor by 1.
+ * - `)` decreases the floor by 1.
+ * - The position is 1-based (starting from 1).
  *
- * @param input the string of ( and ) characters
- * @returns the floor would enter the basement
+ * @param input A string of `(` and `)` characters representing instructions.
+ * @returns The 1-based position of the character causing Santa to enter the basement,
+ * or -1 if he never enters the basement.
  * @example
  * ```ts
  * solvePart2(")"); // 1
