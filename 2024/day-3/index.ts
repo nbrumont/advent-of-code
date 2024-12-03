@@ -1,3 +1,5 @@
+/** @see https://adventofcode.com/2024/day/3 */
+
 /**
  * The exercice is to detect any multiplication in the pattern and sum the multiplications
  * The pattern we are looking for is `mul(a,b)` where a and b are numbers of 3 digits max
