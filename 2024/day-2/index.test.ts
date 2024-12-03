@@ -1,15 +1,14 @@
-const testData = `7 6 4 2 1
+import { describe, expect, it } from "vitest";
+import { readLines } from "../../utils/file";
+import { solve, solve2 } from "./index";
+
+describe("day 2 - test data", () => {
+  const testData = `7 6 4 2 1
 1 2 7 8 9
 9 7 6 2 1
 1 3 2 4 5
 8 6 4 4 1
 1 3 6 7 9`;
-
-import { describe, expect, it } from "vitest";
-import { solve, solve2 } from "./index";
-import { readLines } from "../../utils/file";
-
-describe("day 2 - test data", () => {
   it("solve", () => {
     expect(solve(testData.split("\n"))).toBe(2);
   });
