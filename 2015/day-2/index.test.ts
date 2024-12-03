@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { readLines } from "../../utils/file";
 import { solve, solvePart2 } from "./index";
 
-describe("2015 - day 1 - test data", () => {
+describe("2015 - day 3 - test data", () => {
   it("solve", () => {
     expect(solve(["2x3x4"])).toBe(58);
     expect(solve(["1x1x10"])).toBe(43);
@@ -13,7 +13,7 @@ describe("2015 - day 1 - test data", () => {
   });
 });
 
-describe("2015 - day 1", () => {
+describe("2015 - day 3", () => {
   const lines = readLines(__dirname + "/input");
   it("solve", () => {
     expect(solve(lines)).toBe(1_588_178);
