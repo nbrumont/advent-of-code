@@ -5,6 +5,7 @@
  *
  * @param lines the lines of reports
  * @returns the number of safe reports
+ *
  * @example
  * ```ts
  * solve([
@@ -27,6 +28,7 @@ export function solve(lines: string[]) {
  *
  * @param lines the lines of reports
  * @returns the number of safe reports
+ *
  * @example
  * ```ts
  * solve([
@@ -60,6 +62,7 @@ export function solvePart2(lines: string[]) {
  *
  * @param report an array of numbers
  * @returns true if the report is safe, false otherwise
+ *
  * @example
  * ```ts
  * isReportSafe([1, 2, 3, 4, 5]); // true
@@ -82,8 +85,10 @@ function isReportSafe(report: number[]) {
 
 /**
  * Parse a report from a line into an array of numbers
+ *
  * @param report the report as a string
  * @returns the report as an array of numbers
+ *
  * @example
  * ```ts
  * parseReport("7 6 4 2 1"); // [7, 6, 4, 2, 1]

@@ -6,6 +6,7 @@
  *
  * @param lines An array of strings where each line contains two space-separated numbers.
  * @returns The total distance between the two arrays.
+ *
  * @example
  * ```ts
  * solve([
@@ -31,6 +32,7 @@ export function solve(lines: string[]) {
  *
  * @param lines An array of strings where each line contains two space-separated numbers.
  * @returns The total calculated value.
+ *
  * @example
  * ```ts
  * solve2([
@@ -55,8 +57,10 @@ export function solvePart2(lines: string[]) {
 
 /**
  * Creates two arrays, one for the left part of the input and one for the right part and then sorts them
+ *
  * @param lines
  * @returns the sorted arrays
+ *
  * @example
  * ```ts
  * createLeftAndRightArrays([

@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { readFile } from "../../utils/file";
+import { readContent } from "../../utils/file";
 import { solve, solvePart2 } from "./index";
 
 describe("2015 - day 3 - test data", () => {
@@ -16,11 +16,11 @@ describe("2015 - day 3 - test data", () => {
 });
 
 describe("2015 - day 3", () => {
-  const file = readFile(__dirname + "/input");
+  const content = readContent(__dirname + "/input");
   it("solve", () => {
-    expect(solve(file)).toBe(2081);
+    expect(solve(content)).toBe(2081);
   });
   it("solve - part 2", () => {
-    expect(solvePart2(file)).toBe(2341);
+    expect(solvePart2(content)).toBe(2341);
   });
 });

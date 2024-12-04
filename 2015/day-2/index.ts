@@ -3,6 +3,7 @@
  *
  * @param lines - An array of box dimensions in the format `LxWxH`.
  * @returns The total area of craft paper required.
+ *
  * @example
  * ```ts
  * solve(["2x3x4"]); // 58
@@ -13,7 +14,7 @@ export function solve(lines: string[]): number {
     .map(parseBox)
     .reduce(
       (total, { l, w, h }) => total + calculateBoxAreaWithSupplement(l, w, h),
-      0
+      0,
     );
 }
 
@@ -22,6 +23,7 @@ export function solve(lines: string[]): number {
  *
  * @param lines - An array of box dimensions in the format `LxWxH`.
  * @returns The total ribbon length required.
+ *
  * @example
  * ```ts
  * solvePart2(["2x3x4"]); // 34
@@ -32,7 +34,7 @@ export function solvePart2(lines: string[]): number {
     .map(parseBox)
     .reduce(
       (total, { l, w, h }) => total + calculateRibbonSizeForBox(l, w, h),
-      0
+      0,
     );
 }
 
@@ -41,6 +43,7 @@ export function solvePart2(lines: string[]): number {
  *
  * @param line - A string representing box dimensions in the format `LxWxH`.
  * @returns An object with `l`, `w`, and `h` as the dimensions of the box.
+ *
  * @example
  * ```ts
  * parseBox("2x3x4"); // { l: 2, w: 3, h: 4 }
@@ -62,6 +65,7 @@ function parseBox(line: string): { l: number; w: number; h: number } {
  * @param w - Width of the box.
  * @param h - Height of the box.
  * @returns The total ribbon length needed.
+ *
  * @example
  * ```ts
  * calculateRibbonSizeForBox(2, 3, 4); // 34
@@ -83,6 +87,7 @@ function calculateRibbonSizeForBox(l: number, w: number, h: number): number {
  * @param w - Width of the box.
  * @param h - Height of the box.
  * @returns The total area of the box with the supplement.
+ *
  * @example
  * ```ts
  * calculateBoxAreaWithSupplement(2, 3, 4); // 58
@@ -91,7 +96,7 @@ function calculateRibbonSizeForBox(l: number, w: number, h: number): number {
 function calculateBoxAreaWithSupplement(
   l: number,
   w: number,
-  h: number
+  h: number,
 ): number {
   const [smallest, secondSmallest] = [l, w, h].sort((a, b) => a - b);
   return 2 * (l * w + w * h + h * l) + smallest * secondSmallest;

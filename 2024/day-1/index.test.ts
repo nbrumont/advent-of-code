@@ -8,12 +8,12 @@ describe("2024 - day 1 - test data", () => {
 2   5
 1   3
 3   9
-3   3`;
+3   3`.split("\n");
   it("solve", () => {
-    expect(solve(testData.split("\n"))).toBe(11);
+    expect(solve(testData)).toBe(11);
   });
   it("solve - part 2", () => {
-    expect(solvePart2(testData.split("\n"))).toBe(31);
+    expect(solvePart2(testData)).toBe(31);
   });
 });
 

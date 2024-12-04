@@ -6,6 +6,7 @@
  *
  * @param input the input string of <>^v
  * @returns The number of unique positions visited.
+ *
  * @example
  * ```ts
  * solve(">"); // 2
@@ -21,8 +22,10 @@ export function solve(input: string) {
  * Calculates the number of unique positions visited by Santa and Robo-Santa.
  * Santa follows odd-indexed instructions, Robo-Santa follows even-indexed ones.
  * ^ moves up, v moves down, > moves right, < moves left.
+
  * @param input the input string of <>^v
  * @returns The number of unique positions visited.
+ *
  * @example
  * ```ts
  * solvePart2("^v"); // 3
@@ -42,6 +45,7 @@ export function solvePart2(input: string) {
  *
  * @param input A string containing movement instructions (<>^v).
  * @returns A set of unique positions visited in "x,y" format.
+ *
  * @example
  * ```ts
  * visit(">"); // { "0,0", "1,0" }

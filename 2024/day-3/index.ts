@@ -6,6 +6,7 @@
  *
  * @param input A string containing various instructions, including multiplication patterns.
  * @returns The sum of all valid multiplications found in the input.
+ *
  * @example
  * ```ts
  * solve(`xmul(2,4)%&mul[3,7]!@^do_not_mul(5,5)+mul(32,64]then(mul(11,8)mul(8,5))`)
@@ -32,13 +33,14 @@ export function solve(input: string) {
  *
  * @param input A string containing various instructions, including multiplications and enable/disable commands.
  * @returns The sum of all valid multiplications performed when multiplication is enabled.
+ *
  * @example
  * ```ts
  * solve2(`xmul(2,4)&mul[3,7]!^don't()_mul(5,5)+mul(32,64](mul(11,8)undo()?mul(8,5))`)
  * // 48
  * ```
  */
-export function solve2(input: string) {
+export function solvePart2(input: string) {
   let total = 0;
   let enabled = true;
   const matches = input.matchAll(
@@ -51,7 +53,6 @@ export function solve2(input: string) {
     } else if (match[4] === "do()") {
       enabled = true;
     } else if (match[1] && enabled) {
-      // Process `mul(a,b)` if multiplication is enabled
       const left = Number(match[2]);
       const right = Number(match[3]);
       total += left * right;

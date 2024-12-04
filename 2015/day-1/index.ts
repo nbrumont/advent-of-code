@@ -7,6 +7,7 @@
  *
  * @param input the string of ( and ) characters
  * @returns the floor he would end up in
+ *
  * @example
  * ```ts
  * solve("(())"); // 0
@@ -27,6 +28,7 @@ export function solve(input: string) {
  * @param input A string of `(` and `)` characters representing instructions.
  * @returns The 1-based position of the character causing Santa to enter the basement,
  * or -1 if he never enters the basement.
+ *
  * @example
  * ```ts
  * solvePart2(")"); // 1
